@@ -10,6 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
@@ -17,7 +18,12 @@ Plugin 'bling/vim-airline'
 Plugin 'morhetz/gruvbox'
 Plugin 'othree/html5.vim'
 Plugin 'Tpope/vim-commentary'
+Plugin 'mattn/emmet-vim'
 Plugin 'matze/vim-move'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'marijnh/tern_for_vim'
 " Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,3 +70,13 @@ set guioptions-=T
 set guioptions-=R
 set guioptions-=L
 set guioptions-=e
+
+" if has("gui_running")
+"   if has("gui_gtk2")
+"     set guifont=Sauce Code Powerline
+"   elseif has("gui_macvim")
+"     set guifont=Menlo\ Regular:h14
+"   elseif has("gui_win32")
+"     set guifont=Consolas:h11:cANSI
+"   endif
+" endif
