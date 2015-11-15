@@ -24,6 +24,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,18 +43,17 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set number
+set encoding=utf-8
 
 let g:gruvbox_italic=1
 set bg=dark
 colorscheme gruvbox
 
-set guioptions -=m
-set guioptions -=T
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Linter settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -71,12 +72,30 @@ set guioptions-=R
 set guioptions-=L
 set guioptions-=e
 
-" if has("gui_running")
-"   if has("gui_gtk2")
-"     set guifont=Sauce Code Powerline
-"   elseif has("gui_macvim")
-"     set guifont=Menlo\ Regular:h14
-"   elseif has("gui_win32")
-"     set guifont=Consolas:h11:cANSI
-"   endif
-" endif
+" Font settings
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Python PEP8 standards
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+
