@@ -26,7 +26,9 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'klen/python-mode'
+" Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,7 +75,8 @@ set guioptions-=L
 set guioptions-=e
 
 " Font settings
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+set guifont=Hack\ 12
+" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -90,12 +93,12 @@ nnoremap <space> za
 
 " Python PEP8 standards
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ setlocal tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
 
 
