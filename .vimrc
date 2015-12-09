@@ -27,6 +27,10 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'mxw/vim-jsx'
+Plugin 'jaxbot/syntastic-react'
+
 " Plugin 'klen/python-mode'
 " Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
@@ -101,4 +105,8 @@ au BufNewFile,BufRead *.py
     \ autoindent
     \ fileformat=unix
 
-
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
