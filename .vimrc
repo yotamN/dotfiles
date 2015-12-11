@@ -29,7 +29,9 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'mxw/vim-jsx'
-Plugin 'jaxbot/syntastic-react'
+Plugin 'yats'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Valloric/MatchTagAlways'
 
 " Plugin 'klen/python-mode'
 " Plugin 'davidhalter/jedi-vim'
@@ -64,6 +66,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -110,3 +113,6 @@ au BufNewFile,BufRead *.py
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Highlight eslintrc as json
+au BufReadPost .eslintrc set syntax=json
