@@ -18,18 +18,14 @@ Plugin 'bling/vim-airline'
 Plugin 'morhetz/gruvbox'
 Plugin 'othree/html5.vim'
 Plugin 'Tpope/vim-commentary'
-Plugin 'mattn/emmet-vim'
 Plugin 'matze/vim-move'
 Plugin 'pangloss/vim-javascript'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'mxw/vim-jsx'
-Plugin 'yats'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Valloric/MatchTagAlways'
 
@@ -67,6 +63,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:passive_filetypes = ['js', 'javascript']
 
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -82,8 +79,8 @@ set guioptions-=L
 set guioptions-=e
 
 " Font settings
-set guifont=Hack\ 12
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
+" set guifont=Hack\ 12
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
